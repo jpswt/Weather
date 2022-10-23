@@ -1,0 +1,93 @@
+.weather-container {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-color: hsla(0, 0%, 0%, 0.4);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: hsla(0, 0%, 100%, 0.9);
+}
+
+.weather-container::before {
+	content: '';
+	background: url('../assets/clear.jpg') no-repeat center center/cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.weather-container .searchBar {
+	margin-top: 4rem;
+}
+
+.weather-container .searchBar input {
+	width: 16rem;
+	padding: 0.75rem 0.75rem;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	color: #fff;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.weather-container .searchBar input::placeholder {
+	color: #fff;
+}
+
+.weather-container .searchBar input:focus {
+	outline: 1px solid hsla(196, 100%, 34%, 0.8);
+}
+
+.temp-container {
+	/* min-width: 70%; */
+	margin-top: 6rem;
+	display: flex;
+	flex-direction: row;
+	gap: 2.5rem;
+	color: hsla(0, 0%, 100%, 0.9);
+}
+
+.temp-container .city p {
+	font-size: 1.6rem;
+}
+
+.temp-container .temp p {
+	font-size: 4.6rem;
+	font-weight: 600;
+}
+
+.temp-container .col-2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.2rem;
+}
+
+.temp-container .col-2 .icon-status {
+	position: relative;
+	top: -18%;
+}
+
+.weather-details {
+	margin-top: 5rem;
+	display: flex;
+	gap: 3rem;
+	padding: 1rem 1rem;
+	background-color: hsla(0, 0%, 100%, 0.2);
+	border-radius: 12px;
+	border: 1px solid hsla(0, 0%, 100%, 0.4);
+	font-weight: bold;
+	text-align: center;
+}
+
+.weather-details p:first-child {
+	margin: 0 0 0.5rem 0;
+}
+
+.weather-details p:nth-child(2) {
+	font-size: 1.1rem;
+}
