@@ -6,14 +6,15 @@ import '../components/Weather.css';
 const Weather = () => {
 	const [data, setData] = useState({});
 	const [location, setLocation] = useState('');
+	const [state, setState] = useState('');
 	const [icon, setIcon] = useState('');
 	const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 	async function inputLocation(e) {
-		if (e.key === 'Enter') {
+		if (e.key === ('Enter' || 'Done')) {
 			await axios
 				.get(
-					`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=d5a750bcedae80b849d3570305ce5220`
+					`https://api.openweathermap.org/data/2.5/weather?q=${location},${state}&units=imperial&appid=d5a750bcedae80b849d3570305ce5220`
 				)
 				.then((response) => {
 					setData(response.data);
@@ -21,6 +22,7 @@ const Weather = () => {
 					console.log(response.data);
 				});
 			setLocation('');
+			setState('');
 		}
 	}
 
